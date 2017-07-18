@@ -11,5 +11,8 @@ libraries used for this project and that you will need to install:
 - matplotlib framework: http://matplotlib.org
 - matplotlib basemap framework: http://matplotlib.org/basemap
 
+installing basemap on a Mac OS Sierra is documented here:
+http://matplotlib.org/basemap/users/installing.html
+
 raw data available from:
 http://rslh.info/index.php?option=com_content&view=article&id=48&Itemid=6011

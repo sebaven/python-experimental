@@ -1,10 +1,11 @@
 # coding: utf-8
-import csv_loader
+from .csv_loader import CsvLoader
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 
+
 # load towers coordinates form CSV file
-loader = csv_loader.CsvLoader("/Users/sebastien/Documents/workspace/bird-towers/samples/towers.csv")
+loader = CsvLoader("samples/towers.csv")
 towers = loader.load()
 
 # set map initial size

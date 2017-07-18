@@ -1,6 +1,6 @@
 # coding: utf-8
 import csv
-import bird_tower
+from .bird_tower import BirdTower
 
 
 class CsvLoader:
@@ -10,10 +10,10 @@ class CsvLoader:
         
     def load(self):
         towers = list()
-        csv_file = open(self.csv_file_str, 'rb')
+        csv_file = open(self.csv_file_str, 'r')
         reader = csv.reader(csv_file, delimiter=',')
         for row in reader:
-            tower = bird_tower.BirdTower(row[0], float(row[1]), float(row[2]))
+            tower = BirdTower(row[0], float(row[1]), float(row[2]))
             towers.append(tower)
         csv_file.close()
         return towers

@@ -7,7 +7,7 @@ Finland has many locations to observe birds, different watch towers located all 
 My project idea is to read all those towers location (latitude and longitude) from a CSV file, and display them on a map.
 
 libraries used for this project and that you will need to install:
-- Python 2.7.x
+- Python 3.6.x
 - matplotlib framework: http://matplotlib.org
 - matplotlib basemap framework: http://matplotlib.org/basemap
 

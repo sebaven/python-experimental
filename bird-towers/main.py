@@ -1,5 +1,5 @@
 # coding: utf-8
-from .csv_loader import CsvLoader
+from csv_loader import CsvLoader
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 

@@ -33,8 +33,7 @@ However, Problem 67, is the same challenge with a triangle containing one-hundre
 it cannot be solved by brute force, and requires a clever method! ;o)
 """
 
-input = """
-75
+input = """75
 95 64
 17 47 82
 18 35 87 10
@@ -48,32 +47,22 @@ input = """
 70 11 33 28 77 73 17 78 39 68 17 57
 91 71 52 38 17 14 91 43 58 50 27 29 48
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
-04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
-"""
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23"""
 
-count = 0
-index = 0
-array = input.split('\n')
-for row in array:
-    if row is not '':
-        values = row.split(' ')
-        index_a = index
-        index_b = index + 1
+# organize the data into an array of array
+# [[75], [95, 64], [17, 47, 82], [18, 35, 87, 10], .....]
+rows = input.split("\n")
+array = []
+for i in rows:
+    values = [int(j) for j in i.split()]
+    array.append(values)
 
-        if index_b >= len(values):
-            index_b = index
+# reverse the array to start from bottom row
+array.reverse()
 
-        value_a = values[index_a]
-        value_b = values[index_b]
+# compute partial sums until max total is found
+for i in range(1, len(array)):
+    for j, k in enumerate(array[i]):
+        array[i][j] = k + max([array[i - 1][j], array[i - 1][j + 1]])
 
-        if value_a > value_b:
-            print("selected: %s" % value_a)
-            count = count + int(value_a)
-            index = index_a
-        else:
-            print("selected: %s" % value_b)
-            count = count + int(value_b)
-            index = index_b
-
-
-print("sum: %s" % count)
+print("maximum total from top to bottom: %s" % array[-1][0])

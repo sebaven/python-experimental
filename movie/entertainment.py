@@ -1,6 +1,5 @@
-# coding: utf-8
-import movie
-import index
+from movie import movie
+from movie import index
 
 karate_kid = movie.Movie("The Karate Kid", 
                          "The story of a kid learning Karate to defend himself at school.",

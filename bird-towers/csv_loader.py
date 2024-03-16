@@ -1,4 +1,3 @@
-# coding: utf-8
 import csv
 from bird_tower import BirdTower
 
